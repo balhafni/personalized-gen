@@ -20,4 +20,4 @@ accelerate launch --multi_gpu run_clm.py \
     --lr_scheduler_type reduce_lr_on_plateau \
     --num_train_epochs 10 \
     --report_to "none" \
-    --output_dir check
+    --output_dir pythia_1b_baseline
