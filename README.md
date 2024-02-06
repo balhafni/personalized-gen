@@ -13,6 +13,14 @@ pip install -r requirements.txt
 ```
 
 # Experiments and Reproducibility:
+We make the data we use to train and test our models publicly available in this [release](). Details on how the data was obtained are described [here]().
+
+## Training:
+Replicating our 1B Pythia baseline and Prefix models can be done using the [scripts/baseline.sh](scripts/baseline.sh) and [scripts/prefix.sh](scripts/prefix.sh) scripts, respectively.
+
+## Inference:
+
+## Evaluation:
 
 
 # Hugging Face Integration:
@@ -26,7 +34,7 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 # Citation:
 If you find the code or data in this repo helpful, please cite [our paper]():
 
-```bibtex
+```BibTeX
 @inproceedings{alhafni-etal-2024-personalized,
     title = "Personalized Text Generation with Fine-Grained Linguistic Control",
     author = "Alhafni, Bashar  and
