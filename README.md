@@ -24,8 +24,47 @@ Replicating our 1B Pythia baseline and Prefix models can be done using the [scri
 
 
 # Hugging Face Integration:
-We make our models publicly available on [Hugging Face]()
+We make our best multi-attribute controlled model publicly available on [Hugging Face](https://huggingface.co/balhafni/personalized-gen)
 
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model = AutoModelForCausalLM.from_pretrained('balhafni/personalized-gen')
+tokenizer = AutoTokenizer.from_pretrained('balhafni/personalized-gen')
+
+
+ling_atts = {"ADJ": "5-8", "ADP": "10-11", "ADV": "6-8", "AUX": "9-11",
+             "CONJ": "2-4", "DET": "7-10", "FKGL": "5-6", "NOUN": "11-18",
+             "NUM": "2-3", "PART": "4-5", "PRON": "14-17", "PROPN": "8-11",
+             "PUNCT": "22-25", "ROOT": "9-10", "SCONJ": "3-4", "VERB": "16-20",
+             "acl": "0-1", "acomp": "1-2", "advcl": "2-3", "advmod": "7-9",
+             "amod": "3-6", "appos": "0-1", "attr": "1-2", "attribution": "2-3",
+             "aux": "6-7", "auxpass": "0-1", "case": "0-1", "cc": "2-4",
+             "ccomp": "3-4", "compound": "5-6", "conj": "2-4", "contrast": "0-1",
+             "det": "7-10", "dobj": "6-7", "domain": "blog",
+             "elaboration": "10-12", "mark": "2-3", "neg": "2-3", "nmod": "0-1",
+             "npadvmod": "1-2", "subj": "13-16", "nsubjpass": "0-1",
+             "num_sents": "9-10", "num_tokens": "118-139", "nummod": "1-2",
+             "pcomp": "0-1", "obj": "8-10", "poss": "2-3", "prep": "9-10"
+             }
+
+prompt = ("Today's lunch was a layered entree, consisting of, "
+          "shredded lettuce and popcorn chicken.")
+
+inputs = [''.join([f'{k}:{v}' for k, v in ling_atts.items()]) + prompt]
+inputs = tokenizer(inputs, return_tensors='pt')
+
+preds = model.generate(**inputs,
+                       max_length=1024,
+                       pad_token_id=tokenizer.pad_token_id,
+                       no_repeat_ngram_size=2
+                      )
+
+decoded_preds = tokenizer.batch_decode(preds[:, inputs['input_ids'].shape[1]:],
+                                       skip_special_tokens=True)[0]
+output = prompt + ' ' + decoded_preds.strip()
+print(output)
+```
 
 # License:
 This repo is available under the MIT license. See the [LICENSE](LICENSE) for more info.
