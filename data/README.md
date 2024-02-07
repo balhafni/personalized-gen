@@ -1,6 +1,6 @@
 # Data
 
-We used the [Blogs Authorship Corpus](), [IMDb62](), [Amazon 5-core Reviews]() datasets to construct our benchmark. The description of the how the data was selected, processed, and split into train, dev, and test splits is described in our [paper](). The data we used is available in this [release]().
+We used the [Blogs Authorship Corpus](https://u.cs.biu.ac.il/~koppel/BlogCorpus.htm), [IMDb62](https://umlt.infotech.monash.edu/?page_id=266), [Amazon 5-core Reviews](https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/) datasets to construct our benchmark. The description of the how the data was selected, processed, and split into train, dev, and test splits is described in our [paper](). The data we used is available in this [release]().
 
 ## Benchmark Construction:
 
