@@ -16,10 +16,10 @@ pip install -r requirements.txt
 We make the data we use to train and test our models publicly available in this [release](). Details on how the data was obtained are described [here](data).
 
 ## Training:
-Replicating our 1B Pythia baseline and Prefix models can be done using the [scripts/baseline.sh](scripts/baseline.sh) and [scripts/prefix.sh](scripts/prefix.sh) scripts, respectively.
+Replicating our 1B Pythia baseline and Prefix models can be done using the [scripts/baseline.sh](scripts/baseline.sh) and [scripts/prefix.sh](scripts/prefix.sh) scripts, respectively. Both scripts can be used to also replicate the smaller Pythia models we report on in the paper.
 
 ## Inference and Evaluation:
-
+Once the models are trained, we run the inference on the Dev set using all the models' checkpoints can be done using the [scripts/inference_checkpoints.sh](scripts/inference_checkpoints.sh). We pick the best checkpoint using the [eval/get_best_checkpoint.py](eval/get_best_checkpoint.py) based on the performance on the Dev set. We then run the inference on the Test set using the best checkpoint by using the [scripts/infernece.sh](scripts/inference.sh) script.
 
 
 # Hugging Face Integration:
