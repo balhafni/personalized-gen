@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ```
 
 # Experiments and Reproducibility:
-We make the data we use to train and test our models publicly available in this [release](). Details on how the data was obtained are described [here](data).
+We make the data we use to train and test our models publicly available in this [release](https://github.com/balhafni/personalized-gen/releases/tag/data). Details on how the data was obtained are described [here](data).
 
 ## Training:
 Replicating our 1B Pythia baseline and Prefix models can be done using the [scripts/baseline.sh](scripts/baseline.sh) and [scripts/prefix.sh](scripts/prefix.sh) scripts, respectively. Both scripts can be used to also replicate the smaller Pythia models we report on in the paper.
