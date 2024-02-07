@@ -18,9 +18,8 @@ We make the data we use to train and test our models publicly available in this 
 ## Training:
 Replicating our 1B Pythia baseline and Prefix models can be done using the [scripts/baseline.sh](scripts/baseline.sh) and [scripts/prefix.sh](scripts/prefix.sh) scripts, respectively.
 
-## Inference:
+## Inference and Evaluation:
 
-## Evaluation:
 
 
 # Hugging Face Integration:
