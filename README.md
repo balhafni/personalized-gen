@@ -1,6 +1,6 @@
 # Personalized Text Generation with Fine-Grained Linguistic Control
 
-This repo contains code and pretrained models to reproduce the results in our paper [Personalized Text Generation with Fine-Grained Linguistic Control]().
+This repo contains code and pretrained models to reproduce the results in our paper [Personalized Text Generation with Fine-Grained Linguistic Control](https://arxiv.org/abs/2402.04914).
 
 # Requirements:
 The code was written for Python >=3.9, pytorch 2.1.2, and transformers 4.36.2. You will need a few additional packages. Here's how you can set up the environment using Conda (assuming you have Conda and Cuda installed):
@@ -23,7 +23,7 @@ Once the models are trained, we run the inference on the Dev set using all the m
 
 
 # Hugging Face Integration:
-We make our best multi-attribute controlled model publicly available on [Hugging Face](https://huggingface.co/balhafni/personalized-gen)
+We make our best multi-attribute controlled model publicly available on [Hugging Face](https://huggingface.co/balhafni/personalized-gen):
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -39,7 +39,7 @@ ling_atts = {"ADJ": "5-8", "ADP": "10-11", "ADV": "6-8", "AUX": "9-11",
              "acl": "0-1", "acomp": "1-2", "advcl": "2-3", "advmod": "7-9",
              "amod": "3-6", "appos": "0-1", "attr": "1-2", "attribution": "2-3",
              "aux": "6-7", "auxpass": "0-1", "case": "0-1", "cc": "2-4",
-             "ccomp": "3-4", "compound": "5-6", "conj": "2-4", "contrast": "0-1",
+             "comp": "3-4", "compound": "5-6", "conj": "2-4", "contrast": "0-1",
              "det": "7-10", "dobj": "6-7", "domain": "blog",
              "elaboration": "10-12", "mark": "2-3", "neg": "2-3", "nmod": "0-1",
              "npadvmod": "1-2", "subj": "13-16", "nsubjpass": "0-1",
@@ -70,7 +70,7 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 # Citation:
-If you find the code or data in this repo helpful, please cite [our paper]():
+If you find the code or data in this repo helpful, please cite [our paper](https://arxiv.org/abs/2402.04914):
 
 ```BibTeX
 @inproceedings{alhafni-etal-2024-personalized,
